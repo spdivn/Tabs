@@ -30,7 +30,7 @@
         
         &.is-removed{    
             display: block;    
-            animation: fadeInDown 0.4s reverse linear;
+            animation: fadeInDown 0.4s reverse forwards;
         }
     }
 

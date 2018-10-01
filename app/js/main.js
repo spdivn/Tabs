@@ -108,6 +108,8 @@ const modal = document.querySelector('.modal');
 
 //Open modal
 function openModal() {
+    const modalBox = document.querySelector('.modal__box');
+    modalBox.classList.remove('is-removed');
     activateLoader();
     modal.classList.add('is-active');
 }
@@ -121,13 +123,19 @@ function closeModal() {
         modal.classList.remove('is-active');
         disableScroll();
     },400);
-
 }
 
+document.addEventListener('keydown',event =>{
+    if(event.key==="Escape"){
+        closeModal();
+        disableScroll();
+    }
+});
 
-
-
-
+modal.addEventListener('click',closeModal);
+modal.querySelector('.modal__box').addEventListener('click',event =>{
+    event.stopPropagation();
+});
 
 
 
