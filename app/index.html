@@ -1,13 +1,147 @@
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
-        <title>DOM: Tabs</title>
-        <meta name="viewport" content="width:device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="css/global.css">
-    </head>
-    <body>
-        <h1>Dom Manipulation</h1>
-        <script src="main.js"/>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <title>DOM: Tabs</title>
+    <meta name="viewport" content="width:device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+    <h1 class="text-center">Tabs</h1>
+
+    <div class="tabs">
+        <ul class="tabs__list">
+            <li class="tabs__item is-active">
+                <a href="#privacy">Privacy</a>
+            </li>
+            <li class="tabs__item">
+                <a href="#cookies">Cookies</a>
+            </li>
+            <li class="tabs__item">
+                <a href="#spedizioni">Spedizioni</a>
+            </li>
+            <li class="tabs__item">
+                <a href="#resi">Resi</a>
+            </li>
+        </ul>
+        <div class="tabs__panels">
+            <div id="privacy" class="tabs__panel is-active">
+                <h2 class="tabs__title">Privacy</h2>
+                <p class="tabs__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam soluta
+                    exercitationem facere at! Earum vel et excepturi illum! Ipsa quis adipisci assumenda cupiditate
+                    commodi. Nihil unde minima sit distinctio repellat!</p>
+            </div>
+            <div id="cookies" class="tabs__panel">
+                <h2 class="tabs__title">Cookies</h2>
+                <p class="tabs__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam soluta
+                    exercitationem facere at! Earum vel et excepturi illum! Ipsa quis adipisci assumenda cupiditate
+                    commodi. Nihil unde minima sit distinctio repellat!</p>
+            </div>
+            <div id="spedizioni" class="tabs__panel">
+                <h2 class="tabs__title">Spedizioni</h2>
+                <p class="tabs__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam soluta
+                    exercitationem facere at! Earum vel et excepturi illum! Ipsa quis adipisci assumenda cupiditate
+                    commodi. Nihil unde minima sit distinctio repellat!</p>
+            </div>
+            <div id="resi" class="tabs__panel">
+                <h2 class="tabs__title">Resi</h2>
+                <p class="tabs__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam soluta
+                    exercitationem facere at! Earum vel et excepturi illum! Ipsa quis adipisci assumenda cupiditate
+                    commodi. Nihil unde minima sit distinctio repellat!</p>
+            </div>
+
+        </div>
+    </div>
+
+    <h1 class="text-center">Accordion</h1>
+    <div class="accordion">
+        <h3 class="accordion__header">
+            <a href="#accordion__privacy">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+                Privacy</a>
+        </h3>
+        <div class="accordion__panel" id="accordion__privacy">
+            <p class="accordion__paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, culpa. Minus similique quae
+                officiis consectetur soluta labore excepturi praesentium facere.
+            </p>
+        </div>
+        <h3 class="accordion__header">
+            <a href="#accordion__cookies">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+                Cookies</a>
+        </h3>
+        <div class="accordion__panel" id="accordion__cookies">
+            <p class="accordion__paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, culpa. Minus similique quae
+                officiis consectetur soluta labore excepturi praesentium facere.
+            </p>
+        </div>
+        <h3 class="accordion__header">
+            <a href="#accordion__spedizioni">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+                Spedizioni</a>
+        </h3>
+        <div class="accordion__panel" id="accordion__spedizioni">
+            <p class="accordion__paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, culpa. Minus similique quae
+                officiis consectetur soluta labore excepturi praesentium facere.
+            </p>
+        </div>
+        <h3 class="accordion__header">
+            <a href="#accordion__resi">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+                Resi</a>
+        </h3>
+        <div class="accordion__panel" id="accordion__resi">
+            <p class="accordion__paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, culpa. Minus similique quae
+                officiis consectetur soluta labore excepturi praesentium facere.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Loader -->
+
+    <h2>
+        Loader
+    </h2>
+    <button class="button">Load</button>
+
+    <div class="loader">
+        <div class="loader__background">
+            <img class="loader__icon" src="img/loader.svg" alt="Loading">
+        </div>
+    </div>
+
+    <button class="button" onclick="openModal()">Cookies</button>
+    <div class="modal">
+        <div class="modal__background">
+            <div class="modal__box">
+                    <button onclick="closeModal()" class="modal__close">&times;</button>
+                <h4 class="modal__title">Termini e Condizioni: Cookies</h4>
+                <p class="modal__paragraph">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui possimus asperiores ipsa
+                    voluptatibus, est inventore veritatis non modi eligendi eveniet et ex ut rem, ullam, hic deserunt
+                    reprehenderit suscipit tempore.
+                </p>
+                <button onclick="closeModal()" class="modal__button">Accetto</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
 </html>
