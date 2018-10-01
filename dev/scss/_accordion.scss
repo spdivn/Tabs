@@ -1,0 +1,51 @@
+    .accordion{
+        width: 90%;
+        max-width: 40em;
+        margin: 2em auto;
+
+        &__header{
+            background:  #f6f6f6; 
+            border: 1px solid #e6e6e6; 
+            transition: background-color 250ms ease;
+            margin-bottom: 0;
+
+            &:hover{
+                background-color: lighten(#a7a7a7,5%) ;
+            }
+
+            & a{
+                display: block;
+                padding: 15px;
+                font-size: 0.75em;
+                color:$black;
+ 
+                & svg {
+                    transition: transform 750ms ease;
+                    vertical-align: middle;
+                }
+            }
+            &.is-active{
+                & a{
+                    & svg{ 
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            & a{
+                color:$black;
+            }
+        }
+        
+        &__panel{
+            max-height: 0;
+            overflow: hidden;
+
+            &.is-active{
+                border: 1px solid #e6e6e6; 
+                transition: 750ms;
+                max-height: 15em;
+                padding: 15px;
+            }
+        }
+    }
