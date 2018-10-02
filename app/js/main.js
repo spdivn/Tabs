@@ -1,4 +1,7 @@
-console.log('test');
+
+/**
+ * Tabs
+ */
 
 //Get <ul> with list of tab links
 const tabsList = document.querySelector('.tabs__list');
@@ -18,9 +21,7 @@ tabsList.addEventListener('click', event => {
         //Get correct panel by ID
         const targetPanel = document.getElementById(targetId);
 
-        console.log(targetPanel);
-
-        //Activate correct tabs menu item
+        //removeScrollct tabs menu item
         const allTabsItems = document.querySelectorAll('.tabs__item');
         allTabsItems.forEach(item => {
             item.classList.remove('is-active');
@@ -29,7 +30,7 @@ tabsList.addEventListener('click', event => {
         //Add class to item panel 
         tabsItem.classList.add('is-active');
 
-        //Activate correct panel menu item
+        //removeScrollct panel menu item
         const allTabsPanel = document.querySelectorAll('.tabs__panel');
         allTabsPanel.forEach(item => {
             item.classList.remove('is-active');
@@ -84,25 +85,32 @@ accordion.addEventListener('click', event => {
     }
 });
 
+/**
+ * Loader
+ */
+
 const button = document.querySelector('button');
 
-button.addEventListener('click', activateLoader);
+button.addEventListener('click', removeScroll);
+const html = document.querySelector('html');
 
-function activateLoader() {
-    document.querySelector('html').classList.add('prevent-scroll');
-    document.querySelector('html').classList.add('is-loading');
+function removeScroll() {
+    html.classList.add('prevent-scroll');
+    html.classList.add('is-loading');
 }
-activateLoader();
 
-function disableScroll() {
-    document.querySelector('html').classList.remove('prevent-scroll');
-    document.querySelector('html').classList.remove('is-loading');
+function restoreScroll() {
+    html.classList.remove('prevent-scroll');
+    html.classList.remove('is-loading');
 }
 
 setTimeout(() => {
-    disableScroll();
+    restoreScroll();
 }, 2000);
 
+/**
+ * Modal
+ */
 
 const modal = document.querySelector('.modal');
 
@@ -110,7 +118,7 @@ const modal = document.querySelector('.modal');
 function openModal() {
     const modalBox = document.querySelector('.modal__box');
     modalBox.classList.remove('is-removed');
-    activateLoader();
+    removeScroll();
     modal.classList.add('is-active');
 }
 
@@ -121,19 +129,25 @@ function closeModal() {
     setTimeout(() => {
         modalBox.classList.remove('is-removed');
         modal.classList.remove('is-active');
-        disableScroll();
-    },400);
+        restoreScroll();
+    }, 400);
 }
 
-document.addEventListener('keydown',event =>{
-    if(event.key==="Escape"){
+/**
+ * Keydown press on html
+ */
+document.addEventListener('keydown', event => {
+    if (event.key === "Escape") {
         closeModal();
-        disableScroll();
+        restoreScroll();
     }
 });
 
-modal.addEventListener('click',closeModal);
-modal.querySelector('.modal__box').addEventListener('click',event =>{
+/**
+ * restore click for modal box and add click for modal background
+ */
+modal.addEventListener('click', closeModal);
+modal.querySelector('.modal__box').addEventListener('click', event => {
     event.stopPropagation();
 });
 
