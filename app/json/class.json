@@ -1,0 +1,67 @@
+{
+    "class": {
+        "persona": [
+            {
+                "nome": "Giorgio",
+                "eta": 27,
+                "posizione": 3
+            },
+            {
+                "nome": "Ivan",
+                "eta": 20,
+                "posizione": 8
+            },
+            {
+                "nome": "Nicola",
+                "eta": 22,
+                "posizione": 2
+            },
+            {
+                "nome": "Matteo",
+                "eta": 20,
+                "posizione": 5
+            },
+            {
+                "nome": "Francesco",
+                "eta": 26,
+                "posizione": 6
+            },
+            {
+                "nome": "Illy",
+                "eta": 25,
+                "posizione": 4
+            },{
+                "nome": "Serena",
+                "eta": 23,
+                "posizione": 1
+            },{
+                "nome": "Claudio",
+                "eta": 50,
+                "posizione": 12
+            }
+        ],
+        "computers": [
+            {
+                "name": "Dell"
+            },
+            {
+                "name": "Dell"
+            },
+            {
+                "name": "Dell"
+            },
+            {
+                "name": "Dell"
+            },
+            {
+                "name": "Dell"
+            },
+            {
+                "name": "Dell"
+            },
+            {
+                "name": "Asus"
+            }
+        ]
+    }
+}
