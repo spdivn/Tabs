@@ -18,7 +18,7 @@
             "id": "002",
             "name": "Slip M",
             "active": true,
-            "color": "rgb(255, 150, 0)",
+            "color": "Orange",
             "size": "M",
             "price": "99"
         },
@@ -26,7 +26,7 @@
             "id": "003",
             "name": "Slip S",
             "active": true,
-            "color": "rgb(255, 150, 0)",
+            "color": "Orange",
             "size": "S",
             "price": "89"
         },
@@ -34,7 +34,7 @@
             "id": "004",
             "name": "Slip S",
             "active": true,
-            "color": "rgb(255, 0, 0)",
+            "color": "Red",
             "size": "S",
             "price": "89"
         }

@@ -32,3 +32,14 @@ a{
     h2{
         font-size: 2em;
     }
+
+    .is--active{
+        color: #f2c94c;
+        cursor: inherit;
+    }
+    a:hover, a:focus{
+        color: red;  
+        &.is--active{
+            color: #f2c94c;  
+        }
+    }
