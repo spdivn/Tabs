@@ -20,23 +20,26 @@
             "active": true,
             "color": "Orange",
             "size": "M",
-            "price": "99"
+            "price": "99",
+            "url":"img/calvin-klein-orange.png"
         },
         {
             "id": "003",
             "name": "Slip S",
             "active": true,
-            "color": "Orange",
+            "color": "Red",
             "size": "S",
-            "price": "89"
+            "price": "89",
+            "url":"img/calvin-klein.png"
         },
         {
             "id": "004",
             "name": "Slip S",
             "active": true,
-            "color": "Red",
+            "color": "Blue",
             "size": "S",
-            "price": "89"
+            "price": "89",
+            "url":"img/calvin-klein-blue.png"
         }
     ]
 }

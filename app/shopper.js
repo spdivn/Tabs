@@ -13,10 +13,12 @@ document.addEventListener("DOMContentLoaded", element => {
 
 
     /**
-    * Get data from json
-    */
+     * Get data from json
+     */
     fetch('json/shopper.json')
-        .then(function (response) { return response.json(); })
+        .then(function (response) {
+            return response.json();
+        })
         .then(function (data) {
             for (var i = 0; i < data.productList.length; i++) {
                 if (data.productList[i].type == "customizable") {
@@ -90,6 +92,7 @@ document.addEventListener("DOMContentLoaded", element => {
             aLinkColor = document.querySelectorAll('a.colors'),
             aLinkSizes = document.querySelectorAll('a.sizes');
 
+        var img = document.querySelector('.product-image img');
         //Set the active link for colors
         for (let col = 0; col < aLinkColor.length; col++) {
             if (aLinkColor[col].firstChild.data == productAvaible[indexOfFirst].color) {
@@ -107,6 +110,8 @@ document.addEventListener("DOMContentLoaded", element => {
                 aLinkSizes[col].classList.remove('is--active');
             }
         }
+        
+        img.attributes["src"].value = productAvaible[indexOfFirst].url;
 
         //Event listener for all a links and refresh the ui
         aLinkProd.forEach(el => {
