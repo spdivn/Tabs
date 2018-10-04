@@ -117,7 +117,7 @@
     <h2>
         Loader
     </h2>
-    <button class="button">Load</button>
+    <button id="Loader" class="button">Load</button>
 
     <div class="loader">
         <div class="loader__background">
@@ -125,23 +125,24 @@
         </div>
     </div>
 
-    <button class="button" onclick="openModal()">Cookies</button>
+    <button id="Modal" class="button">Cookies</button>
     <div class="modal">
         <div class="modal__background">
             <div class="modal__box">
-                    <button onclick="closeModal()" class="modal__close">&times;</button>
+                <button class="modal__close">&times;</button>
                 <h4 class="modal__title">Termini e Condizioni: Cookies</h4>
                 <p class="modal__paragraph">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui possimus asperiores ipsa
                     voluptatibus, est inventore veritatis non modi eligendi eveniet et ex ut rem, ullam, hic deserunt
                     reprehenderit suscipit tempore.
                 </p>
-                <button onclick="closeModal()" class="modal__button">Accetto</button>
+                <button class="modal__button">Accetto</button>
             </div>
         </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.jq.js"></script>
 </body>
 
 </html>
