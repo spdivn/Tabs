@@ -1,72 +1,70 @@
 /**
- * Tabs
+ * When document is ready and loaded start tasks
  */
-
-//Get <ul> with list of tab links
 $(document).ready(event => {
-    const $tabsList = $('.tabs__list');
+    //VARIABLES
+    const $buttonLoader = $('#Loader'),
+        $html = $('html'),
+        $tabsList = $('.tabs__list'),
+        $buttonModal = $('#Modal'),
+        $modal = $('.modal'),
+        $buttonCloseModal = $('.modal__close'),
+        $buttonAccept = $('.modal__button'),
+        $modalBox = $('.modal__box'),
+        $accordion = $('.accordion');
+
+    /**
+     * Tabs
+     */
     //Add click listener to whole link list
-    $tabsList.on('click', '.tabs__item a', event => {
+    $tabsList.on('click', '.tabs__item a', function (event) {
         event.preventDefault();
         //Get clicked tab list item
-        const tabsItem = event.target.parentNode;
+        let $tabsItem = $(this).parent();
 
         //Get corresponding panel's ID via hash
-        const targetId = event.target.hash;
+        let $targetId = $(this).attr('href');
 
         //Get correct panel by ID
-        const targetPanel = $(targetId);
+        let targetPanel = $($targetId);
 
         //setLoaderct tabs menu item
-        const $allTabsItems = $('.tabs__item');
+        let $allTabsItems = $('.tabs__item');
         $allTabsItems.removeClass("is-active")
 
         //Add class to item panel 
-        tabsItem.classList.add('is-active');
+        $tabsItem.addClass('is-active');
 
         //setLoaderct panel menu item
-        const $allTabsPanel = $('.tabs__panel');
+        let $allTabsPanel = $('.tabs__panel');
         $allTabsPanel.removeClass('is-active');
 
         //Add class to target panel 
-
         targetPanel.addClass('is-active');
     });
 
     /**
      * Accordion
      */
-
-    const $accordion = $('.accordion');
-    $accordion.on('click', '.accordion__header a, .accordion__header a *', event => {
+    $accordion.on('click', '.accordion__header a, .accordion__header a *', function (event) {
         event.preventDefault();
 
-        let loopingElement = event.target;
+        //Variables
+        let $loopingElement = $(this);
+        let targhetHeader = $loopingElement.parent();
+        let targetPanel = targhetHeader.next();
 
-        while (loopingElement.tagName.toLowerCase() != 'a') {
-            const nextParent = event.target.parentNode;
-            loopingElement = loopingElement.parentNode;
-        }
+        //Containers
+        targetPanel.toggleClass('is-active');
 
-        const targhetHeader = loopingElement.parentNode;
-
-        const targetPanel = targhetHeader.nextElementSibling;
-
-        //Contenitori
-
-        targetPanel.classList.toggle('is-active');
-
-        targhetHeader.classList.toggle('is-active');
+        targhetHeader.toggleClass('is-active');
     });
 
     /**
      * Loader
      */
 
-    const $buttonLoader = $('#Loader');
-
     $buttonLoader.on('click', setLoader);
-    const $html = $('html');
 
     function setLoader() {
         $html.addClass('prevent-scroll');
@@ -76,26 +74,20 @@ $(document).ready(event => {
     function removeLoader() {
         $html.removeClass('prevent-scroll');
         $html.removeClass('is-loading');
-    }   
+    }
 
     /**
      * Modal
      */
 
-    const $buttonModal = $('#Modal');
-    const $modal = $('.modal');
-    let $buttonCloseModal = $('.modal__close');
-    let $buttonAccept = $('.modal__button');
-
-    
-    $buttonCloseModal.on('click',closeModal);
-    $buttonAccept.on('click',closeModal);
-
-    $buttonModal.on('click',openModal);
+     //Init clicks event
+    $buttonCloseModal.on('click', closeModal);
+    $buttonAccept.on('click', closeModal);
+    $buttonModal.on('click', openModal);
+    $modal.on('click', closeModal);
 
     //Open modal
     function openModal() {
-        const $modalBox = $('.modal__box'); 
         $modalBox.removeClass('is-removed');
         setLoader();
         $modal.addClass('is-active');
@@ -103,7 +95,6 @@ $(document).ready(event => {
 
     //Close modal
     function closeModal() {
-        const $modalBox = $('.modal__box');
         $modalBox.addClass('is-removed');
         setTimeout(() => {
             $modalBox.removeClass('is-removed');
@@ -113,9 +104,9 @@ $(document).ready(event => {
     }
 
     /**
-     * Keydown press on html
+     * Keydown Escape on html
      */
-    document.addEventListener('keydown', event => {
+    $(document).on('keydown', event => {
         if (event.key === "Escape") {
             closeModal();
             removeLoader();
@@ -123,11 +114,9 @@ $(document).ready(event => {
     });
 
     /**
-     * restore click for modal box and add click for modal background
+     * Restore click for modal box and add click for modal background
      */
-
-    $modal.on('click', closeModal);
-    $('.modal__box').on('click', event => {
+    $modal.find('.modal__box').on('click', event => {
         event.stopPropagation();
     });
 });
