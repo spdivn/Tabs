@@ -26,7 +26,7 @@ $(document).ready(event => {
         let $targetId = $(this).attr('href');
 
         //Get correct panel by ID
-        let targetPanel = $($targetId);
+        let $targetPanel = $($targetId);
 
         //setLoaderct tabs menu item
         let $allTabsItems = $('.tabs__item');
@@ -40,7 +40,7 @@ $(document).ready(event => {
         $allTabsPanel.removeClass('is-active');
 
         //Add class to target panel 
-        targetPanel.addClass('is-active');
+        $targetPanel.addClass('is-active');
     });
 
     /**
@@ -51,13 +51,13 @@ $(document).ready(event => {
 
         //Variables
         let $loopingElement = $(this);
-        let targhetHeader = $loopingElement.parent();
-        let targetPanel = targhetHeader.next();
+        let $targhetHeader = $loopingElement.parent();
+        let $targetPanel = $targhetHeader.next();
 
         //Containers
-        targetPanel.toggleClass('is-active');
+        $targetPanel.toggleClass('is-active');
 
-        targhetHeader.toggleClass('is-active');
+        $targhetHeader.toggleClass('is-active');
     });
 
     /**
