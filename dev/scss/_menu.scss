@@ -1,0 +1,63 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height: auto;
+    right: -40px;
+    &__button {
+        transform: rotate(90deg);
+        text-transform: uppercase;
+        a {
+            text-decoration: none;
+            padding: 5px 20px;
+            border: 1px solid gold;
+            border-radius: 5px;
+        }
+    }
+    &__list {
+        position: absolute;
+        top: 1%;
+        margin-left: 80px;
+        margin-top: -50px;
+        border: 1px solid goldenrod;
+        border-radius: 5px;
+        padding: 5px 20px;    
+    }
+    &__rows {
+        width: 100%;
+        display: flex;
+        margin-bottom: 10px;
+        flex-direction: row;
+        flex: 1;
+        label {
+            width: 33, 33%;
+        }
+        input {
+            width: 33, 33%;
+        }
+    }
+}
+
+.isActive {
+    animation: slideMenuIn 500ms ease-in forwards;
+}
+
+.hidden {
+    display: none;
+}
+@keyframes slideMenuIn {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
