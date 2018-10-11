@@ -12,9 +12,20 @@ body {
     width: auto;
     height: auto;
     right: -40px;
+
+    &.isActive {
+        display: block;
+        animation: slideMenuIn 0.35s ease-in forwards;
+    }
+
+    &.isNotActive {
+        animation: slideMenuOut 500ms ease-out forwards;
+    }
+
     &__button {
         transform: rotate(90deg);
         text-transform: uppercase;
+
         a {
             text-decoration: none;
             padding: 5px 20px;
@@ -22,6 +33,7 @@ body {
             border-radius: 5px;
         }
     }
+
     &__list {
         position: absolute;
         top: 1%;
@@ -29,35 +41,50 @@ body {
         margin-top: -50px;
         border: 1px solid goldenrod;
         border-radius: 5px;
-        padding: 5px 20px;    
+        padding: 5px 20px;
     }
+
     &__rows {
         width: 100%;
         display: flex;
         margin-bottom: 10px;
         flex-direction: row;
         flex: 1;
+
         label {
             width: 33, 33%;
         }
+
         input {
             width: 33, 33%;
         }
     }
 }
 
-.isActive {
-    animation: slideMenuIn 500ms ease-in forwards;
-}
-
-.hidden {
-    display: none;
-}
 @keyframes slideMenuIn {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
+
+    95% {
+        display: block;
+    }
+
+    100% {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes slideMenuOut {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    95% {
+        display: block;
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }

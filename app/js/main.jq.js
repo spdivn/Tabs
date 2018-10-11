@@ -80,7 +80,7 @@ $(document).ready(event => {
      * Modal
      */
 
-     //Init clicks event
+    //Init clicks event
     $buttonCloseModal.on('click', closeModal);
     $buttonAccept.on('click', closeModal);
     $buttonModal.on('click', openModal);
@@ -91,10 +91,17 @@ $(document).ready(event => {
         $modalBox.removeClass('is-removed');
         setLoader();
         $modal.addClass('is-active');
+        console.log(document.getCookies('ChiusuraPippoModals'));
     }
 
     //Close modal
     function closeModal() {
+        var days = 100;
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toString();
+        document.cookie = "ChiusuraPippoModals=1" + expires + "; path=/";
+
         $modalBox.addClass('is-removed');
         setTimeout(() => {
             $modalBox.removeClass('is-removed');
